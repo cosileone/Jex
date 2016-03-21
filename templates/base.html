@@ -1,27 +1,97 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Jex Homepage</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet"> -->
-  </head>
-  <body>
-
+    <script src="//load.sumome.com/" data-sumo-site-id="30bbe42b9e7a29426424e8ada44c828a5020c18c53cdac0f06f36720c537d149" async="async"></script>
+</head>
+<body>
+    <div id="navbar">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Team</a></li>
+      <li><a href="#">Mission</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
     <div class="container">
-
-      <!-- child template -->
-      {% block content %}{% endblock %}
-
-      <!-- errors -->
-      {% if error %}
-        <p class="error"><strong>Error:</strong> {{ error }}</p>
-      {% endif %}
-
-      <!-- messages -->
-      {% for message in get_flashed_messages() %}
-        {{ message }}
-      {% endfor %}
+        <div id="logo-section">
+            <img src="http://placehold.it/200x200">
+            <h1>JEX</h1>
+            <div id="title-social">
+                <span>
+                    <img src="http://placehold.it/50x50">
+                    <img src="http://placehold.it/50x50">
+                    <img src="http://placehold.it/50x50">
+                </span>
+          </div>
+        </div>
+        <div id="email-text">
+            <p> Welcome to JEX!</p>
+        </div>
+        <form id="email-signup">
+            [email form][submit]
+        </form>
+        <div id="team">
+            <h2>Team</h2>
+            <div id="cosi-profile">
+                <img src="http://placehold.it/50x50">
+                <h3>Mitch</h3>
+                <span class="personal-social">
+                    <img src="http://placehold.it/50x50">
+                    <img src="http://placehold.it/50x50">
+                    <img src="http://placehold.it/50x50">
+                </span>
+                <div class="personal-description">
+                    words
+                </div>
+            </div>
+            <div id="mitch-profile">
+                <img src="http://placehold.it/50x50">
+                <h3>Mitch</h3>
+                <span class="personal-social">
+                    <img src="http://placehold.it/50x50">
+                    <img src="http://placehold.it/50x50">
+                    <img src="http://placehold.it/50x50">
+                </span>
+                <div class="personal-description">
+                    words
+                </div>
+            </div>
+            <div id="matt-profile">
+                <img src="http://placehold.it/50x50">
+                <h3>Matt</h3>
+                <span class="personal-social">
+                    <img src="http://placehold.it/50x50">
+                    <img src="http://placehold.it/50x50">
+                    <img src="http://placehold.it/50x50">
+                </span>
+                <div class="personal-description">
+                    words
+                </div>
+            </div>
+        </div>
+        <div id="story">
+            <h2>Our Story:</h2>
+            <p>words!</p>
+        </div>
+        <div id="mission">
+            <h2>Our Mission:</h2>
+            <p>words!</p>
+        </div>
+        <div id="contact">
+            <h2>Contact:</h2>
+            <img src="http://placehold.it/100x100">
+            <img src="http://placehold.it/100x100">
+            <img src="http://placehold.it/100x100">
+            <img src="http://placehold.it/100x100">
+        </div>
+        <div id="feedback">
+            <h3>Feedback:</h3>
+            <p> We'd love to hear from you. Submit any ideas, comments, questions, or even bugs <a href="http://www.uservoice.com/">here!</a></p>
+        </div>
     </div>
-
-  </body>
+</body>
 </html>

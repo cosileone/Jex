@@ -11,8 +11,8 @@
 <br>
 <h3>Here are some test login credentials:</h3>
 {% for user in users %}
-<b>{{ user[0] }}:</b><br>
-{{ user[1] }} / {{ user[2] }}<br><br>
+<b>{{ user.username }}:</b><br>
+{{ user.email }} / {{ user.password }}<br><br>
 {% endfor %}
 
 {% endblock %}
