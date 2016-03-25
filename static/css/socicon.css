@@ -84,3 +84,9 @@
 .soc-instagram:before {
     content:'x';
 }
+.soc-email1 {
+    background-color: #578AD6;
+}
+.soc-email1:before {
+    content:'<';
+}
