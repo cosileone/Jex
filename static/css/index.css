@@ -1,0 +1,82 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+html {
+    background-image: url('../imgs/fallback.jpg');
+    background-size: cover;
+}
+
+nav {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+#logo-section {
+    margin-top: 12%;
+}
+
+h1 {
+    color: #eee;
+    text-shadow: 0 1px 0 #ccc,
+                 0 2px 0 #c9c9c9,
+                 0 3px 0 #bbb,
+                 0 4px 0 #b9b9b9,
+                 0 5px 0 #aaa,
+                 0 6px 1px rgba(0,0,0,.1),
+                 0 0 5px rgba(0,0,0,.1),
+                 0 1px 3px rgba(0,0,0,.3),
+                 0 3px 5px rgba(0,0,0,.2),
+                 0 5px 10px rgba(0,0,0,.25),
+                 0 10px 10px rgba(0,0,0,.2),
+                 0 20px 20px rgba(0,0,0,.15);
+}
+
+h1 a {
+    color: #eee;
+    text-decoration: none;
+}
+
+h2, h4 {
+    padding-top: 20%;
+    color: #111;
+    text-shadow: 0 1px 2px #aaa;
+}
+
+#logo {
+    background-image: url('http://placehold.it/200x200');
+    background-repeat: no-repeat;
+    border-radius: 100px;
+    height: 200px;
+    width: 200px;
+}
+
+#title-socials {
+    padding-top: 100px;
+}
+
+#title-socials img {
+    border-radius: 3px;
+    margin-left: 10px;
+}
+
+#welcome-text {
+    color: #111;
+    text-shadow: 0 1px 15px #666;
+}
+
+input#email {
+    color: #dedede;
+}
+
+.portrait {
+    border-radius: 200px;
+    height: 200px;
+    width: 200px;
+}
+
+.bio {
+    overflow: hidden;
+}
+
+/* Helpers */
+.montserrat { font-family: 'Montserrat', sans-serif; }
+.header-spacer { margin-top: 20%; }

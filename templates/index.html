@@ -1,11 +1,139 @@
-{% extends "base.html" %}
-{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jex</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/normalize.css') }}" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    <link href="{{ url_for('static', filename='css/socicon.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $('a[href*="#"]:not([href="#"])').click(function() {
+              if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                if (target.length) {
+                  $('html, body').animate({
+                    scrollTop: target.offset().top
+                  }, 1000);
+                  return false;
+                }
+              }
+            });
+         });
+    </script>
+</head>
+<body>
+    <div id="top"></div>
+    <nav>
+        <div class="nav-wrapper">
+            <ul id="nav-mobile" class="right">
+              <li><a href="#top">Home</a></li>
+              <li><a href="#team">Team</a></li>
+              <li><a href="#story">Mission</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container center">
+        <div id="logo-section" class="row">
+            <div id="logo" class="col s2 offset-s2 hoverable z-depth-1"></div>
+            <div id="jex-title" class="col s3 offset-s1 valign-wrapper center-align montserrat">
+            <h1 class="valign" style="font-size:144px;"><a href="#welcome-text">Jex</a></h1>
+            </div>
+            <div id="title-socials" class="col s2 offset-s1">
+                <ul class="soc">
+                    <li><a class="soc-twitter hoverable z-depth-1" href="#"></a></li>
+                    <li><a class="soc-facebook hoverable z-depth-1" href="#"></a></li>
+                    <li><a class="soc-instagram hoverable z-depth-1 soc-icon-last" href="#"></a></li>
+                </ul>
+            </div>
+        </div>
 
-<H1>Welcome to Jex!</H1>
-<br>
-<p>Look at all the cool stuff our software does!</p>
-
-
-<p>Oh, and click <a href="/login">here</a> to go login.</p>
-
-{% endblock %}
+        <div id="welcome-text" class="header-spacer">
+            <h4>Welcome to JEX!</h4>
+            <p class="flow-text">Sign up to be the first to try out Jex</p>
+        </div>
+        <div class="row">
+            <div id="email-form" class="col s6 offset-s3">
+                <form method="POST" action="/signup">
+                    {{ form.email(placeholder='yourname@email.com') }}
+                    {{ form.csrf_token }}
+                    <input class="btn" type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        <div id="team" class="row header-spacer">
+            <h2>Team</h2>
+            <div id="cosi" class="col s2 offset-s1 bio">
+                <img src="{{ url_for('static', filename='imgs/cosi-headshot.jpg') }}" class="portrait responsive-img">
+                <h3>Coiz</h3>
+                <span class="personal-social">
+                    <ul class="soc">
+                        <li><a class="soc-twitter hoverable z-depth-1" href="#"></a></li>
+                        <li><a class="soc-facebook hoverable z-depth-1" href="#"></a></li>
+                        <li><a class="soc-email1 hoverable z-depth-1 soc-icon-last" href="#"></a></li>
+                    </ul>
+                </span>
+                <div class="personal-description">
+                    words
+                </div>
+            </div>
+            <div id="mitch" class="col s2 offset-s2 bio">
+                <img src="{{ url_for('static', filename='imgs/mitch-headshot.jpg') }}" class="portrait responsive-img">                <h3>Mitch</h3>
+                <span class="personal-social">
+                    <ul class="soc">
+                        <li><a class="soc-twitter hoverable z-depth-1" href="#"></a></li>
+                        <li><a class="soc-facebook hoverable z-depth-1" href="#"></a></li>
+                        <li><a class="soc-email1 hoverable z-depth-1 soc-icon-last" href="#"></a></li>
+                    </ul>
+                </span>
+                <div class="personal-description">
+                    words
+                </div>
+            </div>
+            <div id="matt" class="col s2 offset-s2 bio">
+                <img src="{{ url_for('static', filename='imgs/matt-headshot.jpg') }}" class="portrait responsive-img">
+                <h3>Matt</h3>
+                <span class="personal-social">
+                    <ul class="soc">
+                        <li><a class="soc-twitter hoverable z-depth-1" href="#"></a></li>
+                        <li><a class="soc-facebook hoverable z-depth-1" href="#"></a></li>
+                        <li><a class="soc-email1 hoverable z-depth-1 soc-icon-last" href="#"></a></li>
+                    </ul>
+                </span>
+                <div class="personal-description">
+                    words
+                </div>
+            </div>
+        </div>
+        <div id="story" class="header-spacer">
+            <h2>Our Story:</h2>
+            <p>words!</p>
+        </div>
+        <div id="mission">
+            <h2>Our Mission:</h2>
+            <p>words!</p>
+        </div>
+        <div id="contact">
+            <h2>Contact:</h2>
+            <ul class="soc">
+                <li><a class="soc-twitter hoverable z-depth-1" href="#"></a></li>
+                <li><a class="soc-facebook hoverable z-depth-1" href="#"></a></li>
+                <li><a class="soc-instagram hoverable z-depth-1" href="#"></a></li>
+                <li><a class="soc-email1 hoverable z-depth-1 soc-icon-last" href="#"></a></li>
+            </ul>
+        </div>
+        <div id="feedback">
+            <h3>Feedback:</h3>
+            <p> We'd love to hear from you. Submit any ideas, comments, questions, or even bugs <a href="http://www.uservoice.com/">here!</a></p>
+        </div>
+    </div>
+</body>
+</html>

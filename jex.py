@@ -1,4 +1,7 @@
 from flask import Flask, render_template, redirect, url_for, request, session, flash
+from flask_wtf import Form
+from wtforms import StringField
+from wtforms.validators import DataRequired, Email
 from flask.ext.sqlalchemy import SQLAlchemy
 from functools import wraps
 # import sqlite3
@@ -24,9 +27,18 @@ def login_required(f):
     return wrap
 
 
+class EmailForm(Form):
+    email = StringField('Email', validators=[DataRequired(), Email()])
+
 @app.route('/')
 def home():
-    return render_template("index.html")
+    form = EmailForm()
+    return render_template("index.html", form=form)
+
+@app.route('/signup', methods=['POST'])
+def submitEmail():
+    # check login to see email form stuff
+    return redirect(url_for('home'))
 
 
 @app.route('/welcome')
