@@ -32,13 +32,7 @@
     <div id="top">
         {% with messages = get_flashed_messages() %}
             {% if messages %}
-                {% with success = request.args.get('success') %}
-                    {% if success == 1 %}
-                        <ul class="flashes center-align success">
-                    {% else %}
-                        <ul class="flashes center-align failure">
-                    {% endif %}
-                 {% endwith %}
+                <ul class="flashes center-align">
                  {% for message in messages %}
                     <li><a href="#welcome-text">{{ message }}</a></li>
                  {% endfor %}
@@ -57,13 +51,13 @@
             </ul>
         </div>
     </nav>
-    <div class="container center">
+    <div class="container center raleway">
         <div id="logo-section" class="row">
-            <div id="logo" class="col s2 offset-s2 hoverable z-depth-1"></div>
-            <div id="jex-title" class="col s3 offset-s1 valign-wrapper center-align montserrat">
+            <div id="logo" class="col l3 offset-l1 hoverable z-depth-1"></div>
+            <div id="jex-title" class="col l4 offset-l1 montserrat">
             <h1 class="valign" style="font-size:144px;"><a href="#welcome-text">Jex</a></h1>
             </div>
-            <div id="title-socials" class="col s2 offset-s1">
+            <div id="title-socials" class="col l3">
                 <ul class="soc">
                     <li><a class="soc-twitter hoverable z-depth-1" href="#"></a></li>
                     <li><a class="soc-facebook hoverable z-depth-1" href="#"></a></li>
@@ -71,13 +65,14 @@
                 </ul>
             </div>
         </div>
+        <div class="row raleway lightindigo"><h5 class="thin">Say good-bye to nightmarish group projects.</h5></div>
 
-        <div id="welcome-text" class="header-spacer">
+        <div id="welcome-text" class="raleway lightindigo header-spacer">
             <h4>Welcome to JEX!</h4>
-            <p class="flow-text">Sign up to be the first to try out Jex</p>
+            <p class="flow-text">Sign up to be the first to try out our software</p>
         </div>
         <div class="row">
-            <div id="email-form" class="col s6 offset-s3">
+            <div id="email-form" class="col m6 offset-m3">
                 <form method="POST" action="/signup">
                     {{ form.email(placeholder='yourname@email.com') }}
                     {{ form.csrf_token }}
@@ -87,7 +82,7 @@
         </div>
         <div id="team" class="row header-spacer">
             <h2>Team</h2>
-            <div id="cosi" class="col s2 offset-s1 bio">
+            <div id="cosi" class="col m2 offset-m1 bio">
                 <img src="{{ url_for('static', filename='imgs/cosi-headshot.jpg') }}" class="portrait responsive-img">
                 <h3>Cosi</h3>
                 <span class="personal-social">
@@ -101,7 +96,7 @@
                     words
                 </div>
             </div>
-            <div id="mitch" class="col s2 offset-s2 bio">
+            <div id="mitch" class="col m2 offset-m2 bio">
                 <img src="{{ url_for('static', filename='imgs/mitch-headshot.jpg') }}" class="portrait responsive-img">                <h3>Mitch</h3>
                 <span class="personal-social">
                     <ul class="soc">
@@ -114,7 +109,7 @@
                     words
                 </div>
             </div>
-            <div id="matt" class="col s2 offset-s2 bio">
+            <div id="matt" class="col m2 offset-m2 bio">
                 <img src="{{ url_for('static', filename='imgs/matt-headshot.jpg') }}" class="portrait responsive-img">
                 <h3>Matt</h3>
                 <span class="personal-social">
@@ -129,15 +124,15 @@
                 </div>
             </div>
         </div>
-        <div id="story" class="header-spacer">
+        <div id="story" class="row header-spacer">
             <h2>Our Story:</h2>
             <p>words!</p>
         </div>
-        <div id="mission">
+        <div id="mission" class="row">
             <h2>Our Mission:</h2>
             <p>words!</p>
         </div>
-        <div id="contact">
+        <div id="contact" class="row">
             <h2>Contact:</h2>
             <ul class="soc">
                 <li><a class="soc-twitter hoverable z-depth-1" href="#"></a></li>
@@ -148,7 +143,7 @@
         </div>
         <div id="feedback">
             <h3>Feedback:</h3>
-            <p> We'd love to hear from you. Submit any ideas, comments, questions, or even bugs <a href="http://www.uservoice.com/">here!</a></p>
+            <p class="lightindigo"> We'd love to hear from you. Submit any ideas, comments, questions, or even bugs <a href="http://www.uservoice.com/">here!</a></p>
         </div>
     </div>
     <script>

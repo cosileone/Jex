@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,200);
 
 html {
     background-image: url('../imgs/fallback.jpg');
@@ -37,16 +38,22 @@ h1 a {
 
 h2, h4 {
     padding-top: 20%;
-    color: #111;
     text-shadow: 0 1px 2px #aaa;
+    color: #e8eaf6;
+}
+
+h3 {
+    color: #e8eaf6;
 }
 
 #logo {
-    background-image: url('http://placehold.it/200x200');
+    background-image: url('../imgs/logo-bg.jpg');
+    background-position: cover;
     background-repeat: no-repeat;
     border-radius: 100px;
     height: 200px;
     width: 200px;
+    border: 1px solid white;
 }
 
 #title-socials {
@@ -56,10 +63,10 @@ h2, h4 {
 #title-socials img {
     border-radius: 3px;
     margin-left: 10px;
+    min-width: 180px;
 }
 
 #welcome-text {
-    color: #111;
     text-shadow: 0 1px 15px #666;
 }
 
@@ -79,9 +86,15 @@ input#email {
 
 /* Helpers */
 .montserrat { font-family: 'Montserrat', sans-serif; }
+.raleway { font-family: 'Raleway', sans-serif; }
+.thin { font-weight: 200 !important; opacity: 0.6; }
+.lightindigo { color: #e8eaf6; }
 .header-spacer { margin-top: 20%; }
 .flashes {
+    font-size: 18px;
     margin: 0;
+    box-shadow: inset 0 0 100px white;
+    border-bottom: 2px solid black;
 }
 .flashes a {
     text-decoration: none;
