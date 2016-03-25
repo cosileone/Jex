@@ -4,18 +4,18 @@ from wtforms import StringField
 from wtforms.validators import DataRequired, Email
 from flask.ext.sqlalchemy import SQLAlchemy
 from functools import wraps
-# import sqlite3
 
 app = Flask(__name__)
+app.debug = True
 app.secret_key = "jex is awesome"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///./users.db'
-
+app.config['SQLALCHEMY_ECHO'] = True
 db = SQLAlchemy(app)
 
 from models import *
 
 
-#login required decorator
+# login required decorator
 def login_required(f):
     @wraps(f)
     def wrap(*args, **kwargs):
@@ -30,19 +30,31 @@ def login_required(f):
 class EmailForm(Form):
     email = StringField('Email', validators=[DataRequired(), Email()])
 
+
 @app.route('/')
 def home():
     form = EmailForm()
     return render_template("index.html", form=form)
 
+
 @app.route('/signup', methods=['POST'])
-def submitEmail():
-    # check login to see email form stuff
-    return redirect(url_for('home'))
+def submit_email():
+    form = EmailForm()
+    if form.validate_on_submit():
+        email = request.form['email']
+        new_user = User(email)
+        db.session.add(new_user)
+        db.session.commit()
+        flash("Thank you for signing up!")
+        return redirect(url_for('home', success=1))
+    else:
+        flash("Not a valid email address.")
+        db.session.rollback()
+        return redirect(url_for('home', success=0))
 
 
 @app.route('/welcome')
-@login_required
+# @login_required
 def welcome():
     flash("Welcome to Jex!")
     return render_template("welcome.html")
@@ -69,11 +81,7 @@ def logout():
     flash("Alert: You have been logged out.")
     return redirect(url_for('home'))
 
-# def connect_db():
-# 	return sqlite3.connect('users.db')
-
 if __name__ == '__main__':
     host = "127.0.0.1"
     port = 8391
-    app.debug = True
     app.run(host, port)

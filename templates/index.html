@@ -4,13 +4,13 @@
     <title>Jex</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ url_for('static', filename='css/normalize.css') }}" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
     <link href="{{ url_for('static', filename='css/socicon.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script>
         $(function() {
             $('a[href*="#"]:not([href="#"])').click(function() {
@@ -29,7 +29,23 @@
     </script>
 </head>
 <body>
-    <div id="top"></div>
+    <div id="top">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% with success = request.args.get('success') %}
+                    {% if success == 1 %}
+                        <ul class="flashes center-align success">
+                    {% else %}
+                        <ul class="flashes center-align failure">
+                    {% endif %}
+                 {% endwith %}
+                 {% for message in messages %}
+                    <li><a href="#welcome-text">{{ message }}</a></li>
+                 {% endfor %}
+                 </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
     <nav>
         <div class="nav-wrapper">
             <ul id="nav-mobile" class="right">

@@ -80,3 +80,13 @@ input#email {
 /* Helpers */
 .montserrat { font-family: 'Montserrat', sans-serif; }
 .header-spacer { margin-top: 20%; }
+.flashes {
+    margin: 0;
+}
+.flashes a {
+    text-decoration: none;
+}
+.failure { box-shadow: inset 0 0 100px pink; }
+.failure a { color: #AF2204; }
+.success { box-shadow: inset 0 0 100px #a1d490; }
+.success a { color: white; }
