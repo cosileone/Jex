@@ -6,9 +6,19 @@ html {
     background-size: cover;
 }
 
+#alerts {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
 nav {
     background-color: transparent;
     box-shadow: none;
+    position: fixed;
+    top: 0;
+    z-index: 3;
 }
 
 #logo-section {
@@ -36,10 +46,10 @@ h1 a {
     text-decoration: none;
 }
 
-h2, h4 {
-    padding-top: 20%;
+h2 {
     text-shadow: 0 1px 2px #aaa;
     color: #e8eaf6;
+    margin-top: 0;
 }
 
 h3 {
@@ -68,10 +78,19 @@ h3 {
 
 #welcome-text {
     text-shadow: 0 1px 15px #666;
+    background-color: #F5F6FF;
+    padding: 200px 0;
 }
 
 input#email {
-    color: #dedede;
+    color: black;
+}
+
+#team {
+    background-color: rgba(255,255,255,.5);
+    width: 100%;
+    margin-top: 0;
+    padding: 100px 0;
 }
 
 .portrait {
@@ -80,8 +99,10 @@ input#email {
     width: 200px;
 }
 
-.bio {
-    overflow: hidden;
+.bio-text {
+    font-size: 12pt;
+    font-weight: 400;
+    padding: 10px 20px;
 }
 
 /* Helpers */
@@ -93,8 +114,7 @@ input#email {
 .flashes {
     font-size: 18px;
     margin: 0;
-    box-shadow: inset 0 0 100px white;
-    border-bottom: 2px solid black;
+    box-shadow: inset 0 0 100px white, 0 0 10px black;
 }
 .flashes a {
     text-decoration: none;
@@ -103,3 +123,28 @@ input#email {
 .failure a { color: #AF2204; }
 .success { box-shadow: inset 0 0 100px #a1d490; }
 .success a { color: white; }
+::placeholder { color: dimgrey; }
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: dimgrey;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: dimgrey;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: dimgrey;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: dimgrey;
+}
+
+
+/********* Media Queries *********/
+@media only screen and (min-device-width: 320px) {
+    nav ul a{
+        padding: 0 10px;
+    }
+
+    #title-socials {
+        padding: 0;
+    }
+}

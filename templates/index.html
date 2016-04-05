@@ -27,14 +27,23 @@
             });
          });
     </script>
+    <script>
+        $(document).ready(function(){
+            $("a#alert-message").click(function(){
+                $(this).hide();
+            });
+        });
+    </script>
 </head>
 <body>
     <div id="top">
+    </div>
+    <div id="alerts">
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 <ul class="flashes center-align">
                  {% for message in messages %}
-                    <li><a href="#welcome-text">{{ message }}</a></li>
+                    <li><a id="alert-message" href="#welcome-text">{{ message }}</a></li>
                  {% endfor %}
                  </ul>
             {% endif %}
@@ -51,39 +60,39 @@
             </ul>
         </div>
     </nav>
-    <div class="container center raleway">
+    <div class="center raleway">
         <div id="logo-section" class="row">
-            <div id="logo" class="col l3 offset-l1 hoverable z-depth-1"></div>
-            <div id="jex-title" class="col l4 offset-l1 montserrat">
-            <h1 class="valign" style="font-size:144px;"><a href="#welcome-text">Jex</a></h1>
+            <!--<div id="logo" class="hide col l3 offset-l1 hoverable z-depth-1"></div>-->
+            <div id="jex-title" class="col l4 s12 offset-l4 montserrat">
+                <h1 class="valign" style="font-size:144px;"><a href="#welcome-text">Jex</a></h1>
             </div>
-            <div id="title-socials" class="col l3">
+            <div id="title-socials" class="text-center col l4 s12">
                 <ul class="soc">
-                    <li><a class="soc-twitter hoverable z-depth-1" href="#"></a></li>
-                    <li><a class="soc-facebook hoverable z-depth-1" href="#"></a></li>
-                    <li><a class="soc-instagram hoverable z-depth-1 soc-icon-last" href="#"></a></li>
+                    <li><a class="soc-twitter hoverable z-depth-1" href="https://twitter.com/jexteam"></a></li>
+                    <li><a class="soc-facebook hoverable z-depth-1" href="https://www.facebook.com/jexteam"></a></li>
+                    <!--<li><a class="soc-instagram hoverable z-depth-1 soc-icon-last" href="#"></a></li>-->
+                    <li><a class="soc-email1 hoverable z-depth-1 soc-icon-last" href="mailto:jexapp@gmail.com?subject=Contacting Jex Support"></a></li>
                 </ul>
             </div>
         </div>
         <div class="row raleway lightindigo"><h5 class="thin">Say good-bye to nightmarish group projects.</h5></div>
 
-        <div id="welcome-text" class="raleway lightindigo header-spacer">
-            <h4>Welcome to JEX!</h4>
+        <div id="welcome-text" class="raleway header-spacer">
             <p class="flow-text">Sign up to be the first to try out our software</p>
-        </div>
-        <div class="row">
-            <div id="email-form" class="col m6 offset-m3">
-                <form method="POST" action="/signup">
-                    {{ form.email(placeholder='yourname@email.com') }}
-                    {{ form.csrf_token }}
-                    <input class="btn" type="submit" value="Submit">
-                </form>
+            <div class="row">
+                <div id="email-form" class="col s6 offset-s3">
+                    <form method="POST" action="/signup">
+                        {{ form.email(placeholder='yourname@email.com') }}
+                        {{ form.csrf_token }}
+                        <input class="btn" type="submit" value="Submit">
+                    </form>
+                </div>
             </div>
         </div>
-        <div id="team" class="row header-spacer">
-            <h2>Team</h2>
-            <div id="cosi" class="col m2 offset-m1 bio">
-                <img src="{{ url_for('static', filename='imgs/cosi-headshot.jpg') }}" class="portrait responsive-img">
+        <div id="team" class="row">
+            <h2>Meet the Team</h2>
+            <div id="cosi" class="col l4">
+                <img src="{{ url_for('static', filename='imgs/cosi-headshot.jpg') }}" class="portrait responsive-img z-depth-1 hoverable">
                 <h3>Cosi</h3>
                 <span class="personal-social">
                     <ul class="soc">
@@ -92,12 +101,13 @@
                         <li><a class="soc-email1 hoverable z-depth-1 soc-icon-last" href="#"></a></li>
                     </ul>
                 </span>
-                <div class="personal-description">
-                    words
+                <div class="flow-text bio-text">
+                    <p>Passionate about improving the world around him with his insightful problem-solving, Cosi is now focusing on how to advance academic group projects into the 21st century with Jex. Working together with co-founders Matt and Mitch means Cosi has the talented squad he needs to pull off his vision of a more collaborative classroom environment. He believes that with a little creativity and a whole lot of empathy, anyone can make a positive impact on the world.</p>
                 </div>
             </div>
-            <div id="mitch" class="col m2 offset-m2 bio">
-                <img src="{{ url_for('static', filename='imgs/mitch-headshot.jpg') }}" class="portrait responsive-img">                <h3>Mitch</h3>
+            <div id="mitch" class="col l4">
+                <img src="{{ url_for('static', filename='imgs/mitch-headshot.jpg') }}" class="portrait responsive-img z-depth-1 hoverable">
+                <h3>Mitch</h3>
                 <span class="personal-social">
                     <ul class="soc">
                         <li><a class="soc-twitter hoverable z-depth-1" href="#"></a></li>
@@ -105,12 +115,12 @@
                         <li><a class="soc-email1 hoverable z-depth-1 soc-icon-last" href="#"></a></li>
                     </ul>
                 </span>
-                <div class="personal-description">
-                    words
+                <div class="flow-text bio-text">
+                    <p>Mitch grew up in sunny Southern California where he spent most of summers at the beach. His experiences in Boston have taught him about everything from “surviving winters in the northeast” to “how to shovel snow”. Minoring in Technological Entrepreneurship at Northeastern University, Mitch has had to come up with, and execute, a variety of business ideas in the classroom.  Mitch likes to put his educational background to good use here at Jex to help deliver the tools students and professors need to be successful members of a team.</p>
                 </div>
             </div>
-            <div id="matt" class="col m2 offset-m2 bio">
-                <img src="{{ url_for('static', filename='imgs/matt-headshot.jpg') }}" class="portrait responsive-img">
+            <div id="matt" class="col l4">
+                <img src="{{ url_for('static', filename='imgs/matt-headshot.jpg') }}" class="portrait responsive-img z-depth-1 hoverable">
                 <h3>Matt</h3>
                 <span class="personal-social">
                     <ul class="soc">
@@ -119,26 +129,26 @@
                         <li><a class="soc-email1 hoverable z-depth-1 soc-icon-last" href="#"></a></li>
                     </ul>
                 </span>
-                <div class="personal-description">
-                    words
+                <div class="flow-text bio-text">
+                    <p>Growing up overseas meant Matt experienced an extraordinary variety of cultures and people. After graduating with a degree in Economics from Franklin & Marshall College, Matt was able to explore both his love of crunching numbers and connecting people by working on various Marketing teams. Excited about the possibilities of connecting people in a positive way, Matt joined the Jex team to continue the mission of bringing students together in an academic setting.  Matt is excited about the future of the company and looks forward to engaging with customers on a regular basis.</p>
                 </div>
             </div>
         </div>
-        <div id="story" class="row header-spacer">
+        <div id="story" class="row">
             <h2>Our Story:</h2>
             <p>words!</p>
         </div>
         <div id="mission" class="row">
-            <h2>Our Mission:</h2>
+            <h2>What We Do:</h2>
             <p>words!</p>
         </div>
         <div id="contact" class="row">
             <h2>Contact:</h2>
             <ul class="soc">
-                <li><a class="soc-twitter hoverable z-depth-1" href="#"></a></li>
-                <li><a class="soc-facebook hoverable z-depth-1" href="#"></a></li>
-                <li><a class="soc-instagram hoverable z-depth-1" href="#"></a></li>
-                <li><a class="soc-email1 hoverable z-depth-1 soc-icon-last" href="#"></a></li>
+                <li><a class="soc-twitter hoverable z-depth-1" href="https://twitter.com/jexteam"></a></li>
+                <li><a class="soc-facebook hoverable z-depth-1" href="https://www.facebook.com/jexteam"></a></li>
+                <!--<li><a class="soc-instagram hoverable z-depth-1" href="#"></a></li>-->
+                <li><a class="soc-email1 hoverable z-depth-1 soc-icon-last" href="mailto:jexapp@gmail.com?subject=Contacting Jex Support"></a></li>
             </ul>
         </div>
         <div id="feedback">
