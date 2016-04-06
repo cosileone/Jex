@@ -22,7 +22,8 @@ nav {
 }
 
 #logo-section {
-    margin-top: 12%;
+    padding: 10% 0;
+    height: 800px;
 }
 
 h1 {
@@ -48,12 +49,7 @@ h1 a {
 
 h2 {
     text-shadow: 0 1px 2px #aaa;
-    color: #e8eaf6;
     margin-top: 0;
-}
-
-h3 {
-    color: #e8eaf6;
 }
 
 #logo {
@@ -88,8 +84,7 @@ input#email {
 
 #team {
     background-color: rgba(255,255,255,.5);
-    width: 100%;
-    margin-top: 0;
+    margin: 0;
     padding: 100px 0;
 }
 
@@ -99,10 +94,24 @@ input#email {
     width: 200px;
 }
 
+#team h3 {
+    color: #eee;
+}
+
 .bio-text {
     font-size: 12pt;
     font-weight: 400;
     padding: 10px 20px;
+}
+
+#story {
+    background-color: #F5F6FF;
+    padding: 100px 0;
+}
+
+#mission {
+    background-color: rgba(255,255,255,.7);
+    padding: 100px 0;
 }
 
 /* Helpers */
@@ -110,7 +119,14 @@ input#email {
 .raleway { font-family: 'Raleway', sans-serif; }
 .thin { font-weight: 200 !important; opacity: 0.6; }
 .lightindigo { color: #e8eaf6; }
-.header-spacer { margin-top: 20%; }
+.content-section {
+    padding: 100px 0;
+    margin: 0;
+}
+.body-content {
+    font-size: 14pt;
+    text-align: left;
+}
 .flashes {
     font-size: 18px;
     margin: 0;
@@ -139,12 +155,17 @@ input#email {
 
 
 /********* Media Queries *********/
-@media only screen and (min-device-width: 320px) {
+@media only screen and (min-device-width: 320px)
+    and (max-device-width : 1024px) {
     nav ul a{
         padding: 0 10px;
     }
 
     #title-socials {
         padding: 0;
+    }
+
+    .body-content {
+        font-size: 12pt;
     }
 }

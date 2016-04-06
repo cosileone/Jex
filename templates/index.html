@@ -74,10 +74,12 @@
                     <li><a class="soc-email1 hoverable z-depth-1 soc-icon-last" href="mailto:jexapp@gmail.com?subject=Contacting Jex Support"></a></li>
                 </ul>
             </div>
+            <div id="tagline" class="row">
+                <h5 class="col l12 raleway lightindigo thin">Say good-bye to nightmarish group projects.</h5>
+            </div>
         </div>
-        <div class="row raleway lightindigo"><h5 class="thin">Say good-bye to nightmarish group projects.</h5></div>
 
-        <div id="welcome-text" class="raleway header-spacer">
+        <div id="welcome-text" class="raleway content-section">
             <p class="flow-text">Sign up to be the first to try out our software</p>
             <div class="row">
                 <div id="email-form" class="col s6 offset-s3">
@@ -92,13 +94,13 @@
         <div id="team" class="row">
             <h2>Meet the Team</h2>
             <div id="cosi" class="col l4">
-                <img src="{{ url_for('static', filename='imgs/cosi-headshot.jpg') }}" class="portrait responsive-img z-depth-1 hoverable">
+                <a href="http://www.cosileone.com"><img src="{{ url_for('static', filename='imgs/cosi-headshot.jpg') }}" class="portrait responsive-img z-depth-1 hoverable"></a>
                 <h3>Cosi</h3>
                 <span class="personal-social">
                     <ul class="soc">
-                        <li><a class="soc-twitter hoverable z-depth-1" href="#"></a></li>
-                        <li><a class="soc-facebook hoverable z-depth-1" href="#"></a></li>
-                        <li><a class="soc-email1 hoverable z-depth-1 soc-icon-last" href="#"></a></li>
+                        <li><a class="soc-twitter hoverable z-depth-1" href="https://twitter.com/cosileone"></a></li>
+                        <li><a class="soc-facebook hoverable z-depth-1" href="https://www.facebook.com/cosileone"></a></li>
+                        <!--<li><a class="soc-email1 hoverable z-depth-1 soc-icon-last" href="#"></a></li>-->
                     </ul>
                 </span>
                 <div class="flow-text bio-text">
@@ -106,13 +108,13 @@
                 </div>
             </div>
             <div id="mitch" class="col l4">
-                <img src="{{ url_for('static', filename='imgs/mitch-headshot.jpg') }}" class="portrait responsive-img z-depth-1 hoverable">
+                <a href="https://www.linkedin.com/in/mitchell-gallerstein-13a90b85"><img src="{{ url_for('static', filename='imgs/mitch-headshot.jpg') }}" class="portrait responsive-img z-depth-1 hoverable"></a>
                 <h3>Mitch</h3>
                 <span class="personal-social">
                     <ul class="soc">
                         <li><a class="soc-twitter hoverable z-depth-1" href="#"></a></li>
                         <li><a class="soc-facebook hoverable z-depth-1" href="#"></a></li>
-                        <li><a class="soc-email1 hoverable z-depth-1 soc-icon-last" href="#"></a></li>
+                        <!--<li><a class="soc-email1 hoverable z-depth-1 soc-icon-last" href="#"></a></li>-->
                     </ul>
                 </span>
                 <div class="flow-text bio-text">
@@ -120,13 +122,13 @@
                 </div>
             </div>
             <div id="matt" class="col l4">
-                <img src="{{ url_for('static', filename='imgs/matt-headshot.jpg') }}" class="portrait responsive-img z-depth-1 hoverable">
+                <a href="https://www.linkedin.com/in/matthew-williams-045b3a40"><img src="{{ url_for('static', filename='imgs/matt-headshot.jpg') }}" class="portrait responsive-img z-depth-1 hoverable"></a>
                 <h3>Matt</h3>
                 <span class="personal-social">
                     <ul class="soc">
                         <li><a class="soc-twitter hoverable z-depth-1" href="#"></a></li>
                         <li><a class="soc-facebook hoverable z-depth-1" href="#"></a></li>
-                        <li><a class="soc-email1 hoverable z-depth-1 soc-icon-last" href="#"></a></li>
+                        <!--<li><a class="soc-email1 hoverable z-depth-1 soc-icon-last" href="#"></a></li>-->
                     </ul>
                 </span>
                 <div class="flow-text bio-text">
@@ -134,26 +136,35 @@
                 </div>
             </div>
         </div>
-        <div id="story" class="row">
+        <div id="story" class="row content-section">
             <h2>Our Story:</h2>
-            <p>words!</p>
+            <div class="col l10 offset-l1">
+                <p class="flow-text body-content">Jex's beginnings took place within the Northeastern University classrooms. What started off as an Entrepreneurship capstone project with a mission to improve student life, quickly gained momentum and earned us a place at the top, coming in first place in the popular vote for most investable idea.</p>
+                <p class="flow-text body-content">Formerly known as GroupUs, the project set out to solve the problem of coordination and collaboration amongst students who, outside the classroom, are essentially strangers. We wanted to solve all the inconveniences of coordinating a team of peers whose only common connection is the group project at hand. With the help of modern collaborative tools, the existence of Learning Management Systems, and a great deal of organizational behavior research we realized that Jex's mission was a real possibility, and an excellent solution to a very real problem.</p>
+            </div>
         </div>
-        <div id="mission" class="row">
+        <div id="mission" class="row content-section">
             <h2>What We Do:</h2>
-            <p>words!</p>
+            <div class="col l10 offset-l1">
+                <p class="flow-text">What is Jex? Jex is short for <i>Projects</i>.</p>
+                <p class="flow-text body-content">Here at Jex we build software for students and professors designed to improve academic endeavors, strengthen project results, and provide a platform for better cooperation among all those involved in higher education.</p>
+                <p class="flow-text body-content">We achieve these effects by integrating with the latest collaborative technologies necessary for a team to function, as well as having team-building best practices baked right into our user interface. Our intent is to expose the best features of everything from Learning Management Systems like Blackboard Learn and Moodle, to chatting apps we use everyday, and even the very same people working together in your group project.</p>
+            </div>
         </div>
-        <div id="contact" class="row">
-            <h2>Contact:</h2>
-            <ul class="soc">
-                <li><a class="soc-twitter hoverable z-depth-1" href="https://twitter.com/jexteam"></a></li>
-                <li><a class="soc-facebook hoverable z-depth-1" href="https://www.facebook.com/jexteam"></a></li>
-                <!--<li><a class="soc-instagram hoverable z-depth-1" href="#"></a></li>-->
-                <li><a class="soc-email1 hoverable z-depth-1 soc-icon-last" href="mailto:jexapp@gmail.com?subject=Contacting Jex Support"></a></li>
-            </ul>
-        </div>
-        <div id="feedback">
-            <h3>Feedback:</h3>
-            <p class="lightindigo"> We'd love to hear from you. Submit any ideas, comments, questions, or even bugs <a href="http://www.uservoice.com/">here!</a></p>
+        <div id="footer" class="row content-section">
+            <div id="contact" class="col l6 s12">
+                <h2 class="lightindigo">Contact:</h2>
+                <ul class="soc">
+                    <li><a class="soc-twitter hoverable z-depth-1" href="https://twitter.com/jexteam"></a></li>
+                    <li><a class="soc-facebook hoverable z-depth-1" href="https://www.facebook.com/jexteam"></a></li>
+                    <!--<li><a class="soc-instagram hoverable z-depth-1" href="#"></a></li>-->
+                    <li><a class="soc-email1 hoverable z-depth-1 soc-icon-last" href="mailto:jexapp@gmail.com?subject=Contacting Jex Support"></a></li>
+                </ul>
+            </div>
+            <div id="feedback" class="col l6 s12 content-section">
+                <h2 class="lightindigo">Feedback:</h2>
+                <p class="lightindigo"> We'd love to hear from you. Submit any ideas, comments, questions, or even bugs <a href="http://www.uservoice.com/">here!</a></p>
+            </div>
         </div>
     </div>
     <script>
