@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Please log in</h1>
+<br>
+<form action="" method="post">
+	<input type="email" placeholder="Email" name="email" value="{{ request.form.email }}">
+	<input type="password" placeholder="Password" name="passwd" value="{{ request.form.passwd }}">
+	<input type="submit" value="Login">
+</form>
+<br>
+<h3>Here are some test login credentials:</h3>
+{% for user in users %}
+<b>{{ user.username }}:</b><br>
+{{ user.email }} / {{ user.password }}<br><br>
+{% endfor %}
+
+{% endblock %}

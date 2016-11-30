@@ -1,0 +1,4 @@
+Flask == 0.10.1
+Flask_WTF == 0.12
+WTForms == 2.1
+asposebarcode == 1.0.0

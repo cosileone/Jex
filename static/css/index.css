@@ -1,0 +1,170 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,200);
+
+html {
+    background-image: url('../imgs/fallback.jpg');
+    background-size: cover;
+}
+
+#alerts {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    background-color: transparent;
+    box-shadow: none;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+}
+
+#logo-section {
+    padding: 10% 0;
+    height: 800px;
+}
+
+h1 {
+    color: #eee;
+    text-shadow: 0 1px 0 #ccc,
+                 0 2px 0 #c9c9c9,
+                 0 3px 0 #bbb,
+                 0 4px 0 #b9b9b9,
+                 0 5px 0 #aaa,
+                 0 6px 1px rgba(0,0,0,.1),
+                 0 0 5px rgba(0,0,0,.1),
+                 0 1px 3px rgba(0,0,0,.3),
+                 0 3px 5px rgba(0,0,0,.2),
+                 0 5px 10px rgba(0,0,0,.25),
+                 0 10px 10px rgba(0,0,0,.2),
+                 0 20px 20px rgba(0,0,0,.15);
+}
+
+h1 a {
+    color: #eee;
+    text-decoration: none;
+}
+
+h2 {
+    text-shadow: 0 1px 2px #aaa;
+    margin-top: 0;
+}
+
+#logo {
+    background-image: url('../imgs/logo-bg.jpg');
+    background-position: cover;
+    background-repeat: no-repeat;
+    border-radius: 100px;
+    height: 200px;
+    width: 200px;
+    border: 1px solid white;
+}
+
+#title-socials {
+    padding-top: 100px;
+}
+
+#title-socials img {
+    border-radius: 3px;
+    margin-left: 10px;
+    min-width: 180px;
+}
+
+#welcome-text {
+    background-color: #F5F6FF;
+    padding: 200px 0;
+}
+
+input#email {
+    color: black;
+}
+
+#team {
+    background-color: rgba(255,255,255,.5);
+    margin: 0;
+    padding: 100px 0;
+}
+
+.portrait {
+    border-radius: 200px;
+    height: 200px;
+    width: 200px;
+}
+
+#team h3 {
+    color: #eee;
+}
+
+.bio-text {
+    font-size: 12pt;
+    font-weight: 400;
+    padding: 10px 20px;
+}
+
+#story {
+    background-color: #F5F6FF;
+    padding: 100px 0;
+}
+
+#mission {
+    background-color: rgba(255,255,255,.7);
+    padding: 100px 0;
+}
+
+/* Helpers */
+.montserrat { font-family: 'Montserrat', sans-serif; }
+.raleway { font-family: 'Raleway', sans-serif; }
+.thin { font-weight: 200 !important; opacity: 0.6; }
+.lightindigo { color: #e8eaf6; }
+.content-section {
+    padding: 100px 0;
+    margin: 0;
+}
+.body-content {
+    font-size: 14pt;
+    text-align: left;
+}
+.flashes {
+    font-size: 18px;
+    margin: 0;
+    box-shadow: inset 0 0 100px white, 0 0 10px black;
+}
+.flashes a {
+    text-decoration: none;
+}
+.failure { box-shadow: inset 0 0 100px pink; }
+.failure a { color: #AF2204; }
+.success { box-shadow: inset 0 0 100px #a1d490; }
+.success a { color: white; }
+::placeholder { color: dimgrey; }
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: dimgrey;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: dimgrey;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: dimgrey;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: dimgrey;
+}
+
+
+/********* Media Queries *********/
+@media only screen and (min-device-width: 320px)
+    and (max-device-width : 1024px) {
+    nav ul a{
+        padding: 0 10px;
+    }
+
+    #title-socials {
+        padding: 0;
+    }
+
+    .body-content {
+        font-size: 12pt;
+    }
+}
